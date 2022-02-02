@@ -1,69 +1,43 @@
 export const Blogs = [
     {
         id:1,
-        name:"Build Website with ReactJS, Styled-components and GSAP for Scrolling Animations",
-        tags:["react","gsap","styled-components"],
-        date:"13 May, 2021",
-        imgSrc:"https://res.cloudinary.com/practicaldev/image/fetch/s--sBeV06Xc--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2yrzy75q4dzibqz6rf82.png",
-        link:"https://dev.to/codebucks/build-website-with-reactjs-styled-components-and-gsap-for-scrolling-animations-2f10"
+        name:"Le Wagon | Bootcamp pour apprendre toutes les compétences d'un développeur web junior. Formation certifiante RNCP 6.",
+        tags:["RubyOnRails","Javascript","MySQL", "HTML", "CSS", "Figma"],
+        date:"Mars 2021 - Juin 2021",
+        imgSrc:"https://www.histoiredesfax.com/wp-content/uploads/2020/06/Le-Wagon-est-une-ecole-de-code-qui-propose-des-bootcamps-courts-et-intensifs.jpg",
+        link:"https://www.lewagon.com/fr"
     },
     {
         id:2,
-        name:"How to create React Hamburger Menu using Styled-Components",
-        tags:["react","styled-components"],
-        date:"5 July, 2021",
-        imgSrc:"https://codebucks.hashnode.dev/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1625479747640%2F7KzwP9nmj.png%3Fw%3D1600%26h%3D840%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=1920&q=75",
-        link:"https://codebucks.hashnode.dev/react-hamburger-menu"
+        name:"Studi | Formation sur le métier de développeur web option développeur d'application IOS.",
+        tags:["React","Php", "Ios", "Wordpress", "Symfony"],
+        date:"Septembre 2020",
+        imgSrc:"https://www.emploilr.com/photos/450photo_6106.jpg",
+        link:"https://www.studi.com/fr"
     },
     {
         id:3,
-        name:"React Loading Screen: Try these 3 cool loading screens for your app",
-        tags:["react","react-lottie","styled-components"],
-        date:"6 July, 2021",
-        imgSrc:"https://codebucks.hashnode.dev/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1625552344293%2Fegwis0UIX.png%3Fw%3D1600%26h%3D840%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=1920&q=75",
-        link:"https://codebucks.hashnode.dev/react-loading-screens"
+        name:"Udemy | Cours vidéo effectué par des particuliers sur les techologies Web.",
+        tags:["React","VueJs","Express", "NodeJs", "MongoDb"],
+        date:"Septembre, 2021",
+        imgSrc:"https://meilleur-mooc.fr/wp-content/uploads/2021/10/Udemy-1.png",
+        link:"https://www.udemy.com/?utm_source=adwords-brand&utm_medium=udemyads&utm_campaign=NEW-AW-PROS-Branded-Search-FR-FRA_._ci__._sl_FRA_._vi__._sd_All_._la_FR_._&tabei=7&utm_term=_._ag_52142199346_._ad_538171035785_._de_c_._dm__._pl__._ti_kwd-310556426868_._li_9056594_._pd__._&gclid=Cj0KCQiArt6PBhCoARIsAMF5wagXA2czMif6h1BLMIx3ilzRzWRUvM3ejGr7feQqn5QdZ1-pGaCAIZgaAiNjEALw_wcB"
     },
     {
         id:4,
-        name:"How to build a Fabulous Todo App using React, Redux and Framer-Motion",
-        tags:["react","redux","framer-motion"],
-        date:"26 May, 2021",
-        imgSrc:"https://res.cloudinary.com/practicaldev/image/fetch/s--r5oUDhhT--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/036s7j5b73up7455rdth.png",
-        link:"https://dev.to/codebucks/build-redux-react-todo-list-app-with-animations-using-framer-motion-1mp1"
+        name:"ZARA | Chargé d'accueillir les clients et les renseigner. Responsable de la mise en rayon et de la tenue de celui-ci ",
+        tags:["Vendeur","Caissier","Responsable-rayon", "Reserviste", "Formateur"],
+        date:"Décembre 2014 - Novembre 2019",
+        imgSrc:"https://www.retaildetail.be/sites/default/files/styles/news/public/news/zara%20new%20logo%20retail.jpg?itok=hdlk5UKv",
+        link:"https://www.zara.com/fr/"
     },
     {
         id:5,
-        name:"What is Higher Order Component (HOC) in React JS?",
-        tags:["react","reactJS","web-development"],
-        date:"3 Feb, 2021",
-        imgSrc:"https://codebucks.hashnode.dev/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1625295480148%2FlyKj8bpHK.jpeg%3Fw%3D1600%26h%3D840%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=1920&q=75",
-        link:"https://codebucks.hashnode.dev/what-is-higher-order-component"
+        name:"Le Duplex | Organisateur evenementiel",
+        tags:["Acceuil","Préparation de la thematique"],
+        date:"Octobre, 2021",
+        imgSrc:"https://www.parisgourmand.com/images/stories/18-nouvel-an/dupleix-discotheque-reveillon-1.jpg",
+        link:"https://www.leduplex.com/"
     },
-    {
-        id:6,
-        name:"How to implement Pagination Component in React from scratch",
-        tags:["react","css"],
-        date:"5 Jan, 2021",
-        imgSrc:"https://codebucks.hashnode.dev/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1625240050668%2FGAya9b0XK.png%3Fw%3D1600%26h%3D840%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=1920&q=75",
-        link:"https://codebucks.hashnode.dev/pagination-in-react"
 
-    },
-   
-    {
-        id:7,
-        name:"What is Redux ? Simply Explained!",
-        tags:["react","redux","javascript"],
-        date:"16 May, 2021",
-        imgSrc:"https://res.cloudinary.com/practicaldev/image/fetch/s--ZY1EK-Eo--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bcz1u90oq3prr5fga3fs.png",
-        link:"https://dev.to/codebucks/what-is-redux-simply-explained-2ch7"
-    },
-    {
-        id:8,
-        name:"How to create Sidebar navigation menu in ReactJS with react router and framer-motion",
-        tags:["react","framer-motion","styled-components"],
-        date:"26 May, 2021",
-        imgSrc:"https://res.cloudinary.com/practicaldev/image/fetch/s--rv4I8UwE--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0a9h50milhlf1us6mn4a.png",
-        link:"https://dev.to/codebucks/build-sidebar-navigation-menu-in-reactjs-with-react-router-and-framer-motion-for-cool-page-transition-effects-4bc3"
-    },
-  
-] 
+]
