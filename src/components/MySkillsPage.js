@@ -1,4 +1,5 @@
 import React from 'react';
+import useMediaQuery from 'react-hook-media-query'
 import styled, { ThemeProvider } from 'styled-components';
 import { lightTheme } from './Theme';
 import { Iceberg, Computer } from './AllSvgs';
@@ -6,9 +7,9 @@ import LogoComponent from '../subComponents/LogoComponent';
 import SocialIcons from '../subComponents/SocialIcons';
 import PowerButton from '../subComponents/PowerButton';
 import ParticleComponent from '../subComponents/ParticleComponent';
+import Navbar from './NavBar/Navbar';
 
 const Box = styled.div`
-background-color: ${props => props.theme.body};
 width: 100vw;
 height: 100vh;
 position: relative;
@@ -16,9 +17,22 @@ display: flex;
 justify-content: space-evenly;
 align-items: center;
 `
+const Contente = styled.div`
+display: grid;
+grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
+grid-gap: calc(1rem + 2vw);
+@media screen and (max-width: 950px) {
+  grid-template-columns: 1fr;
+}
+`
 
 const Main = styled.div`
-border: 2px solid ${props => props.theme.text};
+border: 2px solid white;
+border-radius: 5px;
+box-shadow: 0 0 .2rem #fff,
+            0 0 .2rem #fff,
+            0 0 2rem #FF382E,
+            0 0 0.8rem #FF382E;
 color: ${props => props.theme.text};
 background-color: ${props => props.theme.body};
 padding: 2rem;
@@ -34,6 +48,11 @@ justify-content: space-between;
 &:hover{
   color: ${props => props.theme.body};
   background-color: ${props => props.theme.text};
+}
+@media screen and (max-width: 950px) {
+  height: 40vh;
+  width: 65vw;
+  padding: 0;
 }
 `
 
@@ -52,6 +71,10 @@ ${Main}:hover &{
 &>*:first-child{
   margin-right: 1rem;
 }
+@media screen and (max-width: 950px) {
+  padding: 1rem;
+}
+
 `
 const Description = styled.div`
 color: ${props => props.theme.text};
@@ -69,16 +92,23 @@ strong{
 ul,p{
   margin-left: 2rem;
 }
+@media screen and (max-width: 950px) {
+  padding: 1rem;
+}
 `
 
 const MySkillsPage = () => {
+
+  const isSmallScreen = useMediaQuery("(min-width: 950px)");
   return (
   <ThemeProvider theme={lightTheme}>
-    <Box>
-      <LogoComponent theme='light'/>
+    {!isSmallScreen ? <Navbar></Navbar>: null}
+    {isSmallScreen ? <LogoComponent theme='dark'/> : null}
       <SocialIcons />
-      <PowerButton />
+      {isSmallScreen ? <PowerButton />: null}
       <ParticleComponent theme='light' />
+    <Box>
+      <Contente>
       <Main>
         <Title>
           <Iceberg width={40} height={40} /> Frontend Développeur
@@ -106,6 +136,7 @@ const MySkillsPage = () => {
           <p>Cloudinary, Heroku, Terminal</p>
         </Description>
       </Main>
+      </Contente>
     </Box>
   </ThemeProvider>
 

@@ -1,56 +1,33 @@
 import React, { useRef, useState } from 'react';
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import music from '../assets/audio/Chill.mp4'
+import { Pause, Play } from '../components/AllSvgs';
 
 
 
 const Box = styled.div`
-display: flex;
+width: auto;
 cursor: pointer;
 position: fixed;
 left: 8rem;
-top: 3rem;
-z-index: 10;
+top: 2rem;
+z-index: 4;
 padding-left: 9rem;
 
-&>*:nth-child(1){
-  animation-delay: 0.2s;
-}
-&>*:nth-child(2){
-  animation-delay: 0.3s;
-}
-&>*:nth-child(3){
-  animation-delay: 0.4s;
-}
-&>*:nth-child(4){
-  animation-delay: 0.5s;
-}
-&>*:nth-child(5){
-  animation-delay: 0.8s;
-}
+@media screen and (max-width: 950px){
+  font-size: 1.1rem;
+  top: 1rem;
+  left: 4rem;
+  right: 50%;
 `
 
-const play = keyframes`
-0%{
-  transform:scaleY(1)
-}
-50%{
-  transform:scaleY(2)
-}
-100%{
-  transform:scaleY(1)
-}
-`
+const Line = styled.div`
 
-const Line = styled.span`
-background: ${props => props.theme.text};
-border: 1px solid ${props => props.theme.body};
-
-animation: ${play} 1s ease infinite;
-animation-play-state: ${props => props.click ? "running" : "paused"};
-height: 1rem;
-width: 2px;
+height: 1.5rem;
+width: 1.5rem;
 margin: 0 0.1rem;
+
+
 `
 
 const SoundBar = () => {
@@ -70,11 +47,9 @@ const SoundBar = () => {
   }
 
   return <Box onClick={() => handleClick()}>
-    <Line click={click}/>
-    <Line click={click}/>
-    <Line click={click}/>
-    <Line click={click}/>
-    <Line click={click}/>
+    <Line>
+    {click ? <Pause click={click}/> : <Play/>}
+    </Line>
     <audio src={music} ref={ref} loop ></audio>
   </Box>;
 };

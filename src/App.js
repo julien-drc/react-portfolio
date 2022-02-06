@@ -10,6 +10,8 @@ import WorkPage from './components/WorkPage'
 import MySkillsPage from './components/MySkillsPage'
 import { AnimatePresence } from "framer-motion"
 import SoundBar from "./subComponents/SoundBar"
+import SocialIcons from "./subComponents/SocialIcons"
+
 
 function App() {
 
@@ -17,9 +19,9 @@ function App() {
   return <>
 
   <GlobalStyle/>
-
+    <SocialIcons/>
     <ThemeProvider theme={lightTheme}>
-    <SoundBar/>
+     <SoundBar/>
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
           <Route exact path="/" component={Main}/>

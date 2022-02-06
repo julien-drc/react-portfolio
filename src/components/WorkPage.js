@@ -1,26 +1,23 @@
 import React, { useEffect, useState } from 'react';
+import useMediaQuery from 'react-hook-media-query'
 import styled from 'styled-components'
 import {motion} from 'framer-motion'
-import img from '../assets/Images/Backgound-black.jpeg'
 import LogoComponent from '../subComponents/LogoComponent'
 import PowerButton from '../subComponents/PowerButton'
 import SocialIcons from '../subComponents/SocialIcons'
 import {Work} from '../data/WorkData'
 import WorkComponent from './WorkComponent';
 import Kunai from '../subComponents/Kunai'
+import Navbar from './NavBar/Navbar';
 
 
 
 const MainContainer = styled(motion.div)`
-background-image: url(${img});
-background-size: cover;
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;
+
 `
 
 const Container = styled.div`
-background-color: ${props => `rgba(${props.theme.bodyRgba}, 0.4)`};
+background-color: ${props => `rgba(${props.theme.bodyRgba}, 0.3)`};
 width: 100%;
 height: 100vh;
 position: relative;
@@ -38,6 +35,9 @@ const Grid =styled.div`
 display: grid;
 grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
 grid-gap: calc(1rem + 2vw);
+@media screen and (max-width: 950px) {
+  grid-template-columns: 1fr;
+}
 `
 const container = {
   hidden: {opacity: 0},
@@ -60,6 +60,8 @@ const WorkPage = () => {
     setNumbers(parseInt(num))
   }, []);
 
+  const isSmallScreen = useMediaQuery("(min-width: 950px)");
+
   return (
   <MainContainer
   variants={container}
@@ -70,10 +72,11 @@ const WorkPage = () => {
   }}
   >
     <Container>
-      <LogoComponent/>
-      <PowerButton />
+      {!isSmallScreen ? <Navbar></Navbar>: null}
+      {isSmallScreen ? <LogoComponent/> : null}
+      {isSmallScreen ? <PowerButton /> : null}
       <SocialIcons/>
-      <Kunai numbers={numbers}/>
+      {isSmallScreen ? <Kunai numbers={numbers}/> : null}
 
       <Center>
         <Grid>
@@ -85,6 +88,7 @@ const WorkPage = () => {
         </Grid>
       </Center>
     </Container>
+
   </MainContainer>
   )
 };

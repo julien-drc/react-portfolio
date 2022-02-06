@@ -9,11 +9,16 @@ width: calc(10rem + 15vw);
 text-decoration: none;
 height: 20rem;
 padding: 1rem;
-color: ${props => props.theme.text};
-border: 2px solid ${props => props.theme.text};
+color: white;
+border: 2px solid white;
+border-radius: 5px;
+box-shadow: 0 0 .2rem #fff,
+            0 0 .2rem #fff,
+            0 0 2rem #FF382E,
+            0 0 0.8rem #FF382E;
 backdrop-filter: blur(2px);
-box-shadow: 0 0 1rem 0 rgba(0,0,0,0.2);
 cursor: pointer;
+word-break: break-all;
 
 display: flex;
 flex-direction: column;
@@ -44,7 +49,7 @@ color: inherit;
 padding: 0.5rem 0;
 padding-top: 1rem;
 font-family: 'Karla', sans-serif;
-border-bottom: 1px solid ${props => props.theme.text};
+border-bottom: 1px solid white;
 
 ${Box}:hover &{
   border-bottom: 1px solid ${props => props.theme.body};
@@ -93,7 +98,7 @@ const BlogComponent = (props) => {
     <Date>
       {date}
     </Date>
-  </Box>;
+  </Box>
   </Container>
 };
 

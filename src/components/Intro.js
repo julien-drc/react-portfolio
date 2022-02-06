@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {motion} from 'framer-motion'
-import Me from '../assets/Images/Me.png'
+import Me from '../assets/Images/Me.jpg'
 
 
 
@@ -14,34 +14,51 @@ transform: translate(-50%, -50%);
 width: 65vw;
 height: 55vh;
 display: flex;
-background: linear-gradient(to right, ${props => props.theme.body} 50%,${props => props.theme.text} 50%),
-            linear-gradient(to left,${props => props.theme.body} 50%,${props => props.theme.text} 50%);
-border-left: 2px solid ${props => props.theme.body};
-border-right: 2px solid ${props => props.theme.text};
-border-bottom: 2px solid rgb(151, 148, 147);
+background-color: rgba(255, 255, 255, 0.1);
+border: 1px solid white;
+box-shadow: 0 0 .2rem #fff,
+            0 0 .2rem #fff,
+            0 0 2rem #FF382E,
+            0 0 0.8rem #FF382E;
+border-radius: 0.5rem;
 background-repeat: no-repeat;
 background-size: 100% 2px;
 z-index: 1;
-`
-const SubBox = styled.div`
-width: 50%;
-position: relative;
-display: flex;
-
-.pic{
-  position: absolute;
-  bottom: 0;
-  left: 60%;
-  transform: translate(-50%, 0%);
-  width: 32rem;
-  height: 28rem;
+@media screen and (max-width: 950px) {
+  transform: translate(-50%, -50%);
 }
 `
-const Text = styled.div`
+
+
+const SubBox = styled.div`
+width: auto;
+position: relative;
+display: flex;
+align-items: center;
+padding: 2rem;
+.pic{
+  position: relative;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.6)
+}
+@media screen and (max-width: 950px) {
+  text-align: center;
+  align-content: space-between;
+  flex-direction: column-reverse;
+  padding: 1%;
+  margin: auto;
+  .pic {
+    width: 11rem;
+    height: 11rem;
+  }
+}
+`
+const Text = styled(motion.div)`
 font-size: calc(1em + 1.5vw);
 color: ${props => props.theme.body};
 padding: 2rem;
-cursor: pointer;
 
 display: flex;
 flex-direction: column;
@@ -49,8 +66,12 @@ justify-content: space-evenly;
 
 &>*:last-child{
   color: ${props => `rgba(${props.theme.bodyRgba},0.6)`};
-  font-size: calc(0.5rem + 1.5vw);
+  font-size: calc(0.6rem + 1.5vw);
   font-weight: 300;
+}
+@media screen and (max-width: 950px) {
+  padding-top: 10%;
+  font-size: 1.7rem;
 }
 `
 
@@ -61,20 +82,22 @@ const Intro = () => {
   transition={{ type: 'spring', duration:2, delay:1 }}
   >
     <SubBox>
-      <Text>
-        <h1>Salut,</h1>
-        <h3>Bienvenue sur mon portfolio,</h3>
-        <h6>Je m'appelle Julien et je suis développeur fullstack junior.</h6>
-      </Text>
-    </SubBox>
-    <SubBox>
-      <motion.div
-      initial={{opacity:0}}
-      animate={{opacity: 1}}
-      transition={{ duration:1, delay:2 }}
-      >
-        <img className="pic" src={Me} alt=""/>
-      </motion.div>
+        <Text
+        initial={{opacity:0}}
+        animate={{opacity: 1}}
+        transition={{ duration:1, delay:2 }}
+        >
+          <p>Salut,</p>
+          <p>Bienvenue sur mon portfolio,</p>
+          <p>Je m'appelle Julien et je suis développeur fullstack junior.</p>
+        </Text>
+        <motion.div
+        initial={{opacity:0}}
+        animate={{opacity: 1}}
+        transition={{ duration:1, delay:2 }}
+        >
+          <img className="pic" src={Me} alt=""/>
+        </motion.div>
     </SubBox>
   </Box>;
 };

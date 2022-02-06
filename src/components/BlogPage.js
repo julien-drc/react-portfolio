@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import useMediaQuery from 'react-hook-media-query'
 import styled from 'styled-components'
-import img from '../assets/Images/Fond-gris.jpeg'
 import LogoComponent from '../subComponents/LogoComponent'
 import PowerButton from '../subComponents/PowerButton'
 import SocialIcons from '../subComponents/SocialIcons'
@@ -8,18 +8,15 @@ import {Blogs} from '../data/BlogData'
 import BlogComponent from './BlogComponent';
 import Anchor from '../subComponents/Anchor';
 import {motion} from 'framer-motion'
+import Navbar from './NavBar/Navbar';
 
 
 const MainContainer = styled(motion.div)`
-background-image: url(${img});
-background-size: cover;
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;
+
 `
 
 const Container = styled.div`
-background-color: ${props => `rgba(${props.theme.bodyRgba}, 0.8)`};
+background-color: ${props => `rgba(${props.theme.bodyRgba}, 0.3)`};
 width: 100%;
 height: auto;
 position: relative;
@@ -37,7 +34,11 @@ const Grid =styled.div`
 display: grid;
 grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
 grid-gap: calc(1rem + 2vw);
+@media screen and (max-width: 950px) {
+  grid-template-columns: 1fr;
+}
 `
+
 
 const container = {
   hidden: {opacity: 0},
@@ -53,6 +54,7 @@ const container = {
 
 const BlogPage = () => {
 
+
   const [numbers, setNumbers] = useState(0);
 
   useEffect(() => {
@@ -60,8 +62,10 @@ const BlogPage = () => {
     setNumbers(parseInt(num))
   }, []);
 
+  const isSmallScreen = useMediaQuery("(min-width: 950px)");
 
-  return (
+  return (<>
+
   <MainContainer
   variants={container}
   initial='hidden'
@@ -70,11 +74,13 @@ const BlogPage = () => {
     opacity:0, transition:{duration: 0.5}
   }}
   >
+
     <Container>
-      <LogoComponent/>
-      <PowerButton />
+      {!isSmallScreen ? <Navbar></Navbar>: null}
+      {isSmallScreen ? <LogoComponent/> : null}
+      {isSmallScreen ? <PowerButton /> : null}
       <SocialIcons/>
-      <Anchor numbers={numbers}/>
+      {isSmallScreen ? <Anchor numbers={numbers}/> : null}
 
       <Center>
         <Grid>
@@ -86,7 +92,8 @@ const BlogPage = () => {
         </Grid>
       </Center>
     </Container>
-  </MainContainer>
+    </MainContainer>
+  </>
   )
 };
 
