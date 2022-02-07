@@ -20,7 +20,7 @@ box-shadow: 0 0 .2rem #fff,
             0 0 2rem #FF382E,
             0 0 0.8rem #FF382E;
 cursor: pointer;
-word-break: break-all;
+word-break: break-word;
 
 display: flex;
 flex-direction: column;
