@@ -1,0 +1,52 @@
+.rec * {
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  overflow: hidden;
+}
+
+.rec figcaption {
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  opacity: 1;
+  background-color: black;
+  color: azure;
+  width: 100%;
+  height: 70%;
+  transform: translateY(150%);
+}
+.rec img {
+  object-fit: scale-down;
+}
+.rec:hover img,
+.rec.hover img {
+  zoom: 1;
+  opacity: 0.5;
+}
+
+.rec:hover:after,
+.rec.hover:after,
+.rec:hover figcaption,
+.rec.hover figcaption {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  opacity: 1;
+}
+@media screen and (max-width: 950px) {
+  .rec * {
+  overflow: visible;
+}
+  .rec figcaption {
+  position: absolute;
+  bottom: auto;
+  right: auto;
+  z-index: 2;
+  opacity: 1;
+  width: 100%;
+  height: 30%;
+  transform: translateY(0);
+}
+
+}

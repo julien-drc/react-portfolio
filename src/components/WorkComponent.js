@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import './BlogComponent.css'
 
 
 
@@ -31,15 +32,20 @@ z-index: 5;
   transition: all 0.3s ease;
 }
 `
+const Caption = styled.figcaption`
 
+`
 const Image = styled.div`
 background-image: ${props => `url(${props.img})`};
 width: 100%;
-height: 60%;
+height: 100%;
 background-size: cover;
 border: 1px solid transparent;
 background-position: center center;
 background-position: center;
+@media screen and (max-width: 950px) {
+  height: 60%;
+}
 
 ${Box}:hover &{
   border: 1px solid ${props => props.theme.body};
@@ -86,12 +92,23 @@ const Item = {
 
 const WorkComponent = (props) => {
   const {name, tags, date, imgSrc, link, description} = props.work;
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 950);
+
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+        const ismobile = window.innerWidth < 950;
+        if (ismobile !== isMobile) setIsMobile(ismobile);
+      }, false);
+    }, [isMobile]);
 
   return <Container
   variants={Item}
+  className={`${isMobile ? "" : "rec"}`}
   >
   <Box target="_blank" to={{pathname: link}}>
     <Image img={imgSrc} />
+    <Caption>
     <Title>{name}</Title>
     <Describe>{description}</Describe>
     <HashTags>
@@ -104,6 +121,7 @@ const WorkComponent = (props) => {
     <Date>
       {date}
     </Date>
+    </Caption>
   </Box>
 </Container>
 };

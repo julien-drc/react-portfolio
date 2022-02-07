@@ -4,7 +4,7 @@ export const Blogs = [
         name:"Le Wagon | Bootcamp pour apprendre toutes les compétences d'un développeur web junior. Formation certifiante RNCP 6.",
         tags:["RubyOnRails","Javascript","MySQL", "HTML", "CSS", "Figma"],
         date:"Mars 2021 - Juin 2021",
-        imgSrc:"https://www.histoiredesfax.com/wp-content/uploads/2020/06/Le-Wagon-est-une-ecole-de-code-qui-propose-des-bootcamps-courts-et-intensifs.jpg",
+        imgSrc:"https://www.ladn.eu/wp-content/uploads/2019/03/wagon-executive.jpg",
         link:"https://www.lewagon.com/fr"
     },
     {

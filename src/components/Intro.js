@@ -49,14 +49,15 @@ padding: 2rem;
   flex-direction: column-reverse;
   padding: 1%;
   margin: auto;
+
   .pic {
-    width: 11rem;
-    height: 11rem;
+    width: 10rem;
+    height: 10rem;
   }
 }
 `
 const Text = styled(motion.div)`
-font-size: calc(1em + 1.5vw);
+font-size: calc(0.8em + 1.5vw);
 color: ${props => props.theme.body};
 padding: 2rem;
 
@@ -70,8 +71,11 @@ justify-content: space-evenly;
   font-weight: 300;
 }
 @media screen and (max-width: 950px) {
-  padding-top: 10%;
-  font-size: 1.7rem;
+  padding-top: 8%;
+  font-size: 1.5rem;
+  height: 10%;
+  padding-bottom: 0.8rem;
+  }
 }
 `
 
